@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "target": "esnext",
+    /**
+     dynamic import 类型检查需要设置 module
+
+     配合ts-node，可以直接gulp or webpack的配置改成ts后缀的文件
+     module改为commonjs是因为 https://github.com/TypeStrong/ts-node#import-statements
+
+     当前配置不影响@babel/preset-typescript
+     */
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "rootDir": "./",
+    "baseUrl": "./",
+    /*
+    path mapping
+    "*": meaning the same name unchanged, so map <moduleName> => <baseUrl>/<moduleName>
+    https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping
+    */
+    "paths": {
+      "*": ["node_modules", "packages"]
+    }
+  },
+  "include": ["packages"],
+  "exclude": ["node_modules"]
+}
