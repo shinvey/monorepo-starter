@@ -4,7 +4,9 @@
   "scripts": {
     "prebuild": "tsc",
     "build": "lerna exec --parallel 'BABEL_ENV=build babel --root-mode upward src --out-dir dist --source-maps --extensions .ts,.tsx --delete-dir-on-start --no-comments'",
-    "lint:ts": "eslint 'packages/**/*.ts{,x}'"
+    "lint:ts": "eslint 'packages/**/*.ts{,x}'",
+    "lint:css": "stylelint 'packages/**/*.css'",
+    "verdaccio": "verdaccio"
   },
   "workspaces": [
     "packages/*"
@@ -22,6 +24,9 @@
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
     "lerna": "^3.20.2",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-no-unsupported-browser-features": "^4.0.0",
     "ts-node": "^8.9.0",
     "typescript": "^3.8.3"
   }
