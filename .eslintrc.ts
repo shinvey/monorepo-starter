@@ -27,4 +27,12 @@ export default {
   rules: {
     'import/no-extraneous-dependencies': ['error'],
   },
+  overrides: [
+    {
+      files: ['*.{test,spec,stories}.ts{,x}'],
+      rules: {
+        'import/no-extraneous-dependencies': ['error', { packageDir: './' }],
+      },
+    },
+  ],
 } as TSESLint.Linter.Config
