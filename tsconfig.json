@@ -12,17 +12,36 @@
      */
     "module": "commonjs",
     "moduleResolution": "node",
+    /*
+    Process & infer types from .js files.
+    在typescript文件中能够识别js文件和类型
+    */
+    "allowJs": true,
+    // Import non-ES modules as default imports.
     "esModuleInterop": true,
-    "rootDir": "./",
-    "baseUrl": "./",
+    // used with outDir
+    // "rootDir": ".",
+    // Module Resolution https://www.typescriptlang.org/docs/handbook/module-resolution.html
+    "baseUrl": ".",
     /*
     path mapping
-    "*": meaning the same name unchanged, so map <moduleName> => <baseUrl>/<moduleName>
     https://www.typescriptlang.org/docs/handbook/module-resolution.html#path-mapping
     */
     "paths": {
+      /*
+      This tells the compiler for any module import that matches the pattern "*" (i.e. all values), to look in two locations:
+      1. <moduleName> => <baseUrl>/node_modules/<moduleName>
+      2. <moduleName> => <baseUrl>/packages/<moduleName>
+      */
       "*": ["node_modules", "packages"]
     }
+    // 输出*.d.ts类型文件
+    // "noEmit": false,
+    // "declaration": true,
+    // "emitDeclarationOnly": true,
+    // "declarationDir": "dist",
+    // 跳过node_modules/**/*.d.ts类型检查
+    // "skipLibCheck": true // https://github.com/Microsoft/TypeScript/issues/14293
   },
   "include": ["packages"],
   "exclude": ["node_modules"]
