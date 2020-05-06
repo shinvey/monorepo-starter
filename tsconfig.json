@@ -34,7 +34,9 @@
       2. <moduleName> => <baseUrl>/packages/<moduleName>
       */
       "*": ["node_modules", "packages"]
-    }
+    },
+    // 允许使用tsx书写react组件
+    "jsx": "react"
     // 输出*.d.ts类型文件
     // "noEmit": false,
     // "declaration": true,

@@ -6,6 +6,8 @@ const configFn: ConfigFunction = api => {
   return {
     presets: [
       '@babel/preset-env',
+      // 转义react jsx https://babeljs.io/docs/en/babel-preset-react
+      '@babel/preset-react'
     ],
     env: {
       build: {
