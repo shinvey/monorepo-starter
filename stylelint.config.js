@@ -1,5 +1,4 @@
-// noinspection JSUnusedGlobalSymbols
-export default {
+module.exports = {
   /**
    * npm i -D stylelint stylelint-config-standard
    * stylelint 文档 https://github.com/stylelint/stylelint
@@ -11,6 +10,7 @@ export default {
     'stylelint-config-standard',
     // Lost grid config for stylelint. See https://github.com/delorge/stylelint-config-lost
     // 'stylelint-config-lost'
+    'stylelint-config-prettier',
   ],
   plugins: [
     /**
@@ -23,29 +23,39 @@ export default {
      * 对css进行浏览器兼容性检查
      * see https://github.com/ismay/stylelint-no-unsupported-browser-features
      */
-    'stylelint-no-unsupported-browser-features'
+    'stylelint-no-unsupported-browser-features',
+    'stylelint-prettier',
   ],
   rules: {
     // especially for scss. See https://github.com/kristerkari/stylelint-config-recommended-scss/blob/master/index.js
     'at-rule-no-unknown': null,
     // rules specified from stylelint-no-unsupported-browser-features
     // see https://github.com/ismay/stylelint-no-unsupported-browser-features#recommendations
-    'plugin/no-unsupported-browser-features': [true, {
-      severity: 'warning'
-    }],
-
+    'plugin/no-unsupported-browser-features': [
+      true,
+      {
+        severity: 'warning',
+      },
+    ],
+    'prettier/prettier': true,
     // add your overrides and additions here.
     // Suggested additions https://github.com/stylelint/stylelint-config-standard#suggested-additions
-    'unit-no-unknown': [true, {
-      ignoreFunctions: ['image-set']
-    }],
+    'unit-no-unknown': [
+      true,
+      {
+        ignoreFunctions: ['image-set'],
+      },
+    ],
     /**
      * Many rules have secondary options which provide further customization.
      * To set secondary options, a two-member array is used:
      * 将css module语法列进非标准pseudo白名单
      */
-    'selector-pseudo-class-no-unknown': [true, {
-      ignorePseudoClasses: ['global']
-    }]
-  }
+    'selector-pseudo-class-no-unknown': [
+      true,
+      {
+        ignorePseudoClasses: ['global'],
+      },
+    ],
+  },
 }

@@ -1,6 +1,6 @@
 import { ConfigFunction } from '@babel/core'
 
-const configFn: ConfigFunction = api => {
+const configFn: ConfigFunction = (api) => {
   api.cache.forever()
 
   return {
