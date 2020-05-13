@@ -6,6 +6,7 @@ const configFn: ConfigFunction = api => {
   return {
     presets: [
       '@babel/preset-env',
+      '@babel/preset-typescript',
     ],
     env: {
       build: {
