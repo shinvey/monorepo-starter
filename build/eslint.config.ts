@@ -33,12 +33,10 @@ export default {
       // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
       // default to latest and warns if missing
       // It will default to "detect" in the future
-      version: 'detect'
-    }
+      version: 'detect',
+    },
   },
-  plugins: [
-    'testing-library'
-  ],
+  plugins: [],
   rules: {
     'no-return-assign': 'off',
     'comma-dangle': 'off',

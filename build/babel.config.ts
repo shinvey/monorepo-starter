@@ -8,7 +8,7 @@ const configFn: ConfigFunction = (api) => {
       '@babel/preset-env',
       '@babel/preset-typescript',
       // 转义react jsx https://babeljs.io/docs/en/babel-preset-react
-      '@babel/preset-react'
+      '@babel/preset-react',
     ],
     env: {
       build: {
