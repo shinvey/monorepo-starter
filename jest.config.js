@@ -1,7 +1,7 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
-export default {
+module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -39,7 +39,7 @@ export default {
   //   "lcov",
   //   "clover"
   // ],
-  coverageReporters: ['text', 'clover'],
+  // coverageReporters: ['text', 'clover'],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: undefined,
@@ -61,11 +61,11 @@ export default {
 
   // A set of global variables that need to be available in all test environments
   // globals: {},
-  globals: {
-    'ts-jest': {
-      extends: './babel.config',
-    },
-  },
+  // globals: {
+  //   'ts-jest': {
+  //     extends: './babel.config',
+  //   },
+  // },
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
@@ -84,10 +84,14 @@ export default {
   //   "tsx",
   //   "node"
   // ],
-  moduleFileExtensions: ['ts', 'tsx', 'js'],
+  // moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__mocks__/fileMock.js',
+    '\\.(css|less|scss)$': '<rootDir>/__mocks__/styleMock.js',
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -154,7 +158,7 @@ export default {
   //   "**/__tests__/**/*.[jt]s?(x)",
   //   "**/?(*.)+(spec|test).[tj]s?(x)"
   // ],
-  testMatch: ['**/__tests__/*.+(ts|tsx|js)', '**/*.test.+(ts|tsx|js)'],
+  // testMatch: ['**/__tests__/*.+(ts|tsx|js|jsx)', '**/*.test.+(ts|tsx|js|jsx)'],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -178,9 +182,9 @@ export default {
 
   // A map from regular expressions to paths to transformers
   // transform: undefined,
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
-  },
+  // transform: {
+  //   '^.+\\.(ts|tsx)$': 'ts-jest',
+  // },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
@@ -198,4 +202,4 @@ export default {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
