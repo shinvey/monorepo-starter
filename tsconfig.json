@@ -10,7 +10,7 @@
 
      当前配置不影响@babel/preset-typescript
      */
-    "module": "commonjs",
+    // "module": "commonjs",
     "moduleResolution": "node",
     /*
     Process & infer types from .js files.
@@ -45,6 +45,6 @@
     // 跳过node_modules/**/*.d.ts类型检查
     // "skipLibCheck": true // https://github.com/Microsoft/TypeScript/issues/14293
   },
-  "include": ["packages"],
+  "include": ["typings","packages"],
   "exclude": ["node_modules"]
 }
