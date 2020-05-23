@@ -34,10 +34,12 @@
       2. <moduleName> => <baseUrl>/packages/<moduleName>
       */
       "*": ["node_modules", "packages"]
-    }
+    },
+    // 支持引入json文件
+    "resolveJsonModule": true,
     // 输出*.d.ts类型文件
     // "noEmit": false,
-    // "declaration": true,
+    "declaration": true
     // "emitDeclarationOnly": true,
     // "declarationDir": "dist",
     // 跳过node_modules/**/*.d.ts类型检查
