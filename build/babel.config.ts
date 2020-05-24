@@ -17,6 +17,13 @@ const configFn: ConfigFunction = (api) => {
        */
       'babel-plugin-transform-async-to-promises',
     ],
+    plugins: [
+      /**
+       * 转换 async/await 为 promise chain
+       * https://github.com/rpetrich/babel-plugin-transform-async-to-promises
+       */
+      'babel-plugin-transform-async-to-promises',
+    ],
     env: {
       build: {
         /**
