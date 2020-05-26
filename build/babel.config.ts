@@ -6,16 +6,10 @@ const configFn: ConfigFunction = (api) => {
   return {
     presets: [
       '@babel/preset-env',
+      // 支持编译typescript https://babeljs.io/docs/en/babel-preset-typescript
       '@babel/preset-typescript',
       // 转义react jsx https://babeljs.io/docs/en/babel-preset-react
       '@babel/preset-react',
-    ],
-    plugins: [
-      /**
-       * 转换 async/await 为 promise chain
-       * https://github.com/rpetrich/babel-plugin-transform-async-to-promises
-       */
-      'babel-plugin-transform-async-to-promises',
     ],
     plugins: [
       /**
