@@ -29,6 +29,7 @@ export default {
     },
   ],
   plugins: [
+    del({ targets: ['dist', 'cjs', 'esm', 'es'] }),
     // Preferably set as first plugin.
     peerDepsExternal(),
     resolve(),
@@ -44,6 +45,5 @@ export default {
     postcss(),
     image(),
     process.env.MODE === 'production' && terser(),
-    del({ targets: ['dist', 'cjs', 'esm', 'es'] }),
   ],
 }
