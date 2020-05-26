@@ -3,7 +3,7 @@ import { Button } from '@storybook/react/demo'
 
 export default function WithEmojiB() {
   return (
-    <Button onClick={() => {}}>
+    <Button onClick={() => console.log('EmojiB button clicked')}>
       <span role="img" aria-label="so cool">
         😀 😎 👍 💯
       </span>
