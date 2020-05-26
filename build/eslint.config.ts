@@ -1,6 +1,10 @@
 import { TSESLint } from '@typescript-eslint/experimental-utils'
 
 // noinspection JSUnusedGlobalSymbols
+/**
+ * 使用typescript类型系统定义eslint config
+ * Note: 当前文件没有投入使用
+ */
 export default {
   env: {
     node: true,
@@ -11,14 +15,16 @@ export default {
   extends: [
     'standard',
     'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
+    // 'plugin:react/recommended',
     'plugin:testing-library/recommended',
-    'plugin:testing-library/react',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
+    // 'plugin:testing-library/react',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+    // 'prettier/react',
+    'prettier/standard',
   ],
   parserOptions: {
     ecmaVersion: 2018,
@@ -28,20 +34,22 @@ export default {
     },
   },
   settings: {
-    react: {
-      // React version. "detect" automatically picks the version you have installed.
-      // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
-      // default to latest and warns if missing
-      // It will default to "detect" in the future
-      version: 'detect',
-    },
+    // react: {
+    //   // React version. "detect" automatically picks the version you have installed.
+    //   // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+    //   // default to latest and warns if missing
+    //   // It will default to "detect" in the future
+    //   version: 'detect',
+    // },
   },
   plugins: [],
   rules: {
     'no-return-assign': 'off',
     'comma-dangle': 'off',
     'import/no-extraneous-dependencies': ['error'],
-    'react/prop-types': 'off',
+    // 'react/prop-types': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
   },
   overrides: [
     {

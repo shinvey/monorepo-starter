@@ -1,7 +1,7 @@
-// const { TSESLint } = require('@typescript-eslint/experimental-utils')
-/**
- * @type {TSESLint.Linter.Config}
- */
+// 套上ts-node比较卡，eslint使用使用时无法及时响应
+// require('ts-node').register()
+// module.exports = require('./build/eslint.config').default
+
 module.exports = {
   env: {
     node: true,

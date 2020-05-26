@@ -1,2 +1,2 @@
-require('ts-node').register({ /* options */ })
+require('ts-node').register()
 module.exports = require('./build/babel.config')
