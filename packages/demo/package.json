@@ -19,5 +19,8 @@
   "peerDependencies": {
     "@storybook/react": "^5.3.18",
     "react": "^16.13.1"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873/"
   }
 }
