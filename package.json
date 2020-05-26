@@ -14,7 +14,7 @@
     "lint:ts": "eslint \"packages/**/*.+(j|t)s*(x)\"",
     "lint:css": "stylelint \"packages/**/*.*(p|s|l)+(c|a|e)ss\"",
     "verdaccio": "verdaccio",
-    "test": "jest",
+    "test": "jest --onlyChanged",
     "push:all": "git remote | xargs -L1 git push --all",
     "push:all:win": "git-bash -c 'npm run push:all'"
   },
