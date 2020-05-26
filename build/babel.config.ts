@@ -6,6 +6,7 @@ const configFn: ConfigFunction = (api) => {
   return {
     presets: [
       '@babel/preset-env',
+      // 支持编译typescript https://babeljs.io/docs/en/babel-preset-typescript
       '@babel/preset-typescript',
     ],
     plugins: [
