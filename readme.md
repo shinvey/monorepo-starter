@@ -8,3 +8,11 @@
 发布方式一样，使用lerna publish发布。
 参考文档
 - [Commit message with description and breaking change in body](https://www.conventionalcommits.org/en/v1.0.0-beta.4/#commit-message-with-description-and-breaking-change-in-body)
+
+## 如何使用私有npm仓库发布npm包？
+为所有npm包设置
+- [在lerna.json中添加registry](https://github.com/lerna/lerna#lernajson)
+- [在命令行中指定registry](https://github.com/lerna/lerna/tree/master/commands/publish#--registry-url)
+
+为单个npm包设置
+- [在npm包目录下的package.json中添加registry](https://github.com/lerna/lerna/tree/master/commands/publish#publishconfigregistry)
